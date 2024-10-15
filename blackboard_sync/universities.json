@@ -9,6 +9,15 @@
     "api_url": "https://portal.uclan.ac.uk"
   },
   {
+    "name": "Syracuse University",
+    "short_name": "SU",
+    "login": {
+      "start_url": "https://blackboard.syracuse.edu/",
+      "target_url": "https://blackboard.syracuse.edu//ultra/"
+    },
+    "api_url": "https://blackboard.syracuse.edu/"
+  },
+  {
     "name": "University of Westminster",
     "login": {
       "start_url": "https://learning.westminster.ac.uk",
