@@ -37,7 +37,9 @@ class ContentBody(FStream):
         if self.ignore:
             return
 
-        self.write_base(path / f"{path.stem}.html", executor, self.body, self.modified_time)
+        self.write_base(
+            path / f"{path.stem}.html", executor, self.body, self.modified_time
+        )
 
         for child in self.children:
             child.write(path, executor)
