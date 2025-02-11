@@ -11,6 +11,7 @@ from .base import BStream
 from .api_path import BBContentPath
 from .job import DownloadJob
 
+import logging
 
 class Attachment(BStream):
     """File attached to a content."""
@@ -36,6 +37,10 @@ class Attachment(BStream):
             self.filename = filename + real_ext
 
         self.modified_time = modified_time
+        
+        logging.info(f"Attachment: {self.filename}")
+        logging.info(f"Attachment MIME: {mime}")
+        logging.info(f"Attachment Modified Time: {self.modified_time}")
 
         self.stream = job.session.download(attachment_id=attachment.id,
                                            **api_path)

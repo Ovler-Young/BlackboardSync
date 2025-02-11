@@ -25,7 +25,7 @@ class Document:
         self.attachments = []
         modified_time = content.modified if content else None
         logging.info(f"Attachments: {len(filtered_attachments)}\n" +
-                     "modified_time: {modified_time}")
+                     "modified_time" + str(modified_time))
 
         for i, attachment in enumerate(filtered_attachments):
             self.attachments.append(
