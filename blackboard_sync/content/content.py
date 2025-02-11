@@ -27,6 +27,7 @@ class Content:
                  job: DownloadJob) -> None:
 
         logger.info(f"{content.title}[{content.contentHandler}]")
+        logger.info(f"Content: {content}, modified: {content.modified}")
 
         self.body = None
         self.handler = None

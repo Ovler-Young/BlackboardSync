@@ -49,7 +49,7 @@ class Config(configparser.ConfigParser):
         self.read(self._config_file)
 
         # Set up logging
-        logger.setLevel(logging.WARN)
+        logger.setLevel(logging.DEBUG)
         logger.addHandler(logging.StreamHandler())
 
     def save(self) -> None:

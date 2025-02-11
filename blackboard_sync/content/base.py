@@ -4,6 +4,7 @@ from pathlib import Path
 from requests import Response
 
 from concurrent.futures import ThreadPoolExecutor
+import logging
 
 
 class BStream:
@@ -25,6 +26,7 @@ class BStream:
                     f.write(chunk)
 
             if modified_time is not None:
+                logging.info(f"Setting modified time to {modified_time}")
                 timestamp = modified_time.timestamp()
                 os.utime(path, (timestamp, timestamp))
 

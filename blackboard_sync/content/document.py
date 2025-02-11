@@ -9,6 +9,8 @@ from .attachment import Attachment
 from .api_path import BBContentPath
 from .job import DownloadJob
 
+import logging
+
 
 class Document:
     """Represents a file with attachments in the Blackboard API"""
@@ -22,6 +24,7 @@ class Document:
 
         self.attachments = []
         modified_time = content.modified if content else None
+        logging.info(f"Attachments: {len(filtered_attachments)}\n modified_time: {modified_time}")
 
         for i, attachment in enumerate(filtered_attachments):
             self.attachments.append(
