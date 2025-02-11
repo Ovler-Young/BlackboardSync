@@ -219,7 +219,7 @@ class BlackboardSync:
         logger = logging.getLogger(__name__)
 
         file_handler = logging.FileHandler(log_path)
-        file_handler.setLevel(logging.WARNING)
+        file_handler.setLevel(logging.DEBUG)
 
         logger.addHandler(file_handler)
 
