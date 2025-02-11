@@ -43,7 +43,8 @@ class Attachment(BStream):
         logging.info(f"Attachment MIME: {mime}")
         logging.info(f"Attachment Modified Time: {self.modified_time}")
 
-        self.stream = job.session.download(attachment_id=attachment.id, **api_path)
+        self.stream = job.session.download(attachment_id=attachment.id,
+                                           **api_path)
 
     def write(self, path: Path, executor: ThreadPoolExecutor) -> None:
         super().write_base(
