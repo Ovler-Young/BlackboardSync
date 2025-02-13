@@ -26,9 +26,12 @@ class BStream:
                     f.write(chunk)
 
             if modified_time is not None:
-                logging.info(f"Setting modified time to {modified_time}")
+                logging.debug(f"Setting modified time to {path.name}")
+                logging.debug(f"Setting modified time to {modified_time}")
                 timestamp = modified_time.timestamp()
                 os.utime(path, (timestamp, timestamp))
+            else:
+                logging.warning(f"File {path.name} has no modified time")
 
         executor.submit(_write)
 
@@ -45,8 +48,11 @@ class FStream:
                 f.write(body)
 
             if modified_time is not None:
-                logging.info(f"Setting modified time to {modified_time}")
+                logging.debug(f"Setting modified time to {path.name}")
+                logging.debug(f"Setting modified time to {modified_time}")
                 timestamp = modified_time.timestamp()
                 os.utime(path, (timestamp, timestamp))
+            else:
+                logging.warning(f"File {path.name} has no modified time")
 
         executor.submit(_write)
